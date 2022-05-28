@@ -1,0 +1,12 @@
+asyncio
+aiohttp
+aiohttp
+datetime
+requests
+re
+flask
+time
+goose3
+lxml
+logging
+dotenv
