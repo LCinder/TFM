@@ -4,5 +4,4 @@ requests
 flask
 goose3
 lxml
-tensorflow_hub
 keras
