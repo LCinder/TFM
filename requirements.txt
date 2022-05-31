@@ -3,7 +3,6 @@ aiohttp
 aiohttp
 datetime
 requests
-re
 flask
 time
 goose3
