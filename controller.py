@@ -17,8 +17,8 @@ import numpy
 
 TIMEOUT = 12
 MODEL_LOADED = False
-model_, tokenizer = model.load_model()
-model_2 = model.load_model_bert()
+#model_, tokenizer = model.load_model()
+#model_2 = model.load_model_bert()
 
 
 ################################################################################
@@ -141,7 +141,7 @@ def parse_date(date_string):
 
 
 def date_2_string(date):
-    return "{}-{}-{} at {}".format(date.day, date.month, date.year, date.hour)
+    return "{}-{}-{}".format(date.day, date.month, date.year)
 
 
 def remove_url(url):
@@ -278,7 +278,11 @@ async def json_2_tweet(json_response):
                 image = ""
             tweet = Tweet(title, body, text, interactions, conversation_id, image)
 
-            classification = pred(body, tokenizer)
+            if body == "":
+                classification = pred(text, tokenizer)
+            else:
+                classification = pred(body, tokenizer)
+
             tweet.truthfulness = str(round(classification[0][0], 3))
 
             tweets.push(tweet)
