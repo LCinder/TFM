@@ -6,6 +6,4 @@ goose3
 lxml
 pandas
 numpy
-tensorflow_hub
-tensorflow_text
 bs4
