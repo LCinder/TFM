@@ -17,8 +17,8 @@ import numpy
 
 TIMEOUT = 12
 MODEL_LOADED = False
-#model_, tokenizer = model.load_model()
-#model_2 = model.load_model_bert()
+model_, tokenizer = model.load_model()
+model_2 = model.load_model_bert()
 
 
 ################################################################################
