@@ -6,5 +6,4 @@ requests
 flask
 goose3
 lxml
-logging
 dotenv
