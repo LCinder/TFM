@@ -9,4 +9,3 @@ numpy
 tensorflow_hub
 tensorflow_text
 bs4
-keras
