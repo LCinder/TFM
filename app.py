@@ -60,6 +60,3 @@ def get_user(username):
     user = controller.json_2_user(res_user_id)
     return user
 
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0")
