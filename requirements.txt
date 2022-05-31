@@ -8,6 +8,6 @@ pandas
 numpy
 tensorflow_hub
 tensorflow_text
-BeautifulSoup
+bs4
 keras
 sklearn
