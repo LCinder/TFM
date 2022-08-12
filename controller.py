@@ -12,8 +12,7 @@ from goose3 import Goose
 from lxml.etree import ParserError
 import logging
 import model.model as model
-from tensorflow import keras
-from keras.preprocessing.sequence import pad_sequences
+from keras_preprocessing.sequence import pad_sequences
 import numpy
 
 TIMEOUT = 12

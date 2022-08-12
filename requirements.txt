@@ -1,6 +1,4 @@
 
-keras-preprocessing
-keras
 aiohttp
 datetime
 requests
