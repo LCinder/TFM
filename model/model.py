@@ -2,8 +2,8 @@ import json
 
 from keras_preprocessing.text import tokenizer_from_json
 #from tensorflow_hub import KerasLayer
-from keras.models import model_from_json
-import tensorflow_text
+from keras_models import model_from_json
+#import tensorflow_text
 
 
 def load_model_bert():

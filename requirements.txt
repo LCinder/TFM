@@ -1,5 +1,6 @@
 
 keras-preprocessing
+keras-models
 aiohttp
 datetime
 requests
