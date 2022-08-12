@@ -9,3 +9,4 @@ goose3
 lxml
 gunicorn
 pyopenssl
+tensorflow
