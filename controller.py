@@ -11,8 +11,8 @@ import time
 from goose3 import Goose
 from lxml.etree import ParserError
 import logging
-import model.model_2 as model
-import keras.preprocessing as preprocessing
+import model.model as model
+from keras_preprocessing.sequence import pad_sequences
 import numpy
 
 TIMEOUT = 12
@@ -386,9 +386,9 @@ def json_2_user(json_response):
 ################################################################################
 ################################################################################
 def tokenize(tokenizer, element):
-    return preprocessing.sequence.pad_sequences(tokenizer.texts_to_sequences(numpy.array([element])), maxlen=500)
+    return pad_sequences(tokenizer.texts_to_sequences(numpy.array([element])), maxlen=500)
 
 
 def pred(element):
-    return model_2.predict([element])
-    #return model_.predict_classes(tokenize(tokenizer, element))[0][0]
+    return model_2.predict([tokenize(tokenizer, element)])
+    #return model_2.predict_classes(tokenize(tokenizer, element))[0][0]

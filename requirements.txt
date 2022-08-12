@@ -1,10 +1,9 @@
+keras-preprocessing
 aiohttp
 datetime
 requests
 flask
 goose3
 lxml
-tensorflow_hub
-keras
 gunicorn
 pyopenssl
