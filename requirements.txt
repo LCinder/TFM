@@ -9,4 +9,4 @@ lxml
 gunicorn
 pyopenssl
 tensorflow-cpu
-dotenv
+python-dotenv
