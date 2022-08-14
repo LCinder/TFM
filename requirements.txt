@@ -3,7 +3,7 @@ keras
 aiohttp
 datetime
 requests
-flask
+aioflask
 goose3
 lxml
 gunicorn
