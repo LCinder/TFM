@@ -1,4 +1,4 @@
-from aioflask import Flask, jsonify, request
+from flask import Flask, jsonify, request
 import controller
 import requests
 import os
