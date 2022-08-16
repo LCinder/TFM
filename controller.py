@@ -301,8 +301,10 @@ async def json_2_tweet(json_response):
             tweet = Tweet(title, body, text, interactions, conversation_id, image, domain, date)
 
             if len(text) > 100:
-                if body == "" or (date == "" or domain is None or domain == ""):
+                if body == "" or (date == "" and (domain is None or domain == "")):
                     tweet.body = ""
+                    tweet.title = ""
+                    tweet.domain = "Unknown"
                     classification = pred(text)
                 else:
                     classification = pred(body)
