@@ -143,7 +143,8 @@ def parse_date(date_string):
 
 
 def parse_date_2(date_string):
-    return datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%SZ")
+    r = re.findall(r"\d+-\d+-\d+", date_string)
+    return r[0]
 
 
 def date_2_string(date):
@@ -278,9 +279,12 @@ async def json_2_tweet(json_response):
             title = clean_text(article[0])
             body = clean_text(article[1])
 
+            date = ""
+            domain = ""
+
             try:
                 domain = article[3]
-                date = date_2_string(parse_date_2(article[4]))
+                date = parse_date_2(article[4])
             except IndexError:
                 domain = ""
                 date = ""
@@ -296,14 +300,16 @@ async def json_2_tweet(json_response):
 
             tweet = Tweet(title, body, text, interactions, conversation_id, image, domain, date)
 
-            if body == "":
-                classification = pred(text)
-            else:
-                classification = pred(body)
+            if len(text) > 100:
+                if body == "" or (date == "" or domain is None or domain == ""):
+                    tweet.body = ""
+                    classification = pred(text)
+                else:
+                    classification = pred(body)
 
-            tweet.truthfulness = str(round(classification[0][0], 3))
+                tweet.truthfulness = str(round(classification[0][0], 3))
 
-            tweets.push(tweet)
+                tweets.push(tweet)
 
     return tweets
 
